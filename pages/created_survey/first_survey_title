@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial,scale=1">
+        <title>Create Survey</title>
+        <link rel="stylesheet" href="../css/studio.css">
+    </head>
+</head>
+
+<body>
+    <form id="workSpace" action="../created_survey/survey_title.php" method="post "><label>1. you name</label><input type="text" placeholder="Mehari" /><br /><label>2. your comment please</label><br /><textarea placeholder="this i swonderfull"></textarea><br /><label>3. you phone number</label><input type="number" placeholder="you phone number"
+        /><br /><label>4. Email</label><input type="email" placeholder="Enter your email" /><br /><label>5. Phone</label><input type="tel" placeholder="Enter your phone" /><br /><label>6. birth date</label><input type="date" /><br /><label>7. how are you</label><br
+        /><label>fine</label><input type="radio" name="7radio" /><br /><label>dflsdjk</label><input type="radio" name="7radio" /><br /><label>sosoo</label><input type="radio" name="7radio" /><br /><label>dflk</label><input type="radio" name="7radio" /><br
+        /></form>
+</body>
+
+</html>

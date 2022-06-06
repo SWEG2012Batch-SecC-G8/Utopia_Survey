@@ -1,0 +1,159 @@
+<?php
+require '../php/direct_url_access.php';
+require '../php/customer_detail.php';
+// require '../php/store_image.php';
+include "../includes/header.php";
+urlaccess($_SERVER['REQUEST_METHOD'],realpath(__FILE__),$_SERVER['SCRIPT_FILENAME']);
+?>
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial,scale=1">
+        <link rel="stylesheet" href="../css/header-footer.css">
+        <title>Create Survey</title>
+        <link rel="stylesheet" href="../css/pr.css">
+    </head>
+
+    <body topmargin=0px leftmargin=0px rightmargin=0px bottommargin=0px>
+
+        <div id="coverphoto">
+            <figure id="figure">
+                <?php  echo "<imG src='$profile_photo_path' id='photo'> </img>"; ?> </figure>
+
+            <form action="../php/store_image.php" method="POST" id="profilChange" enctype="multipart/form-data">
+                <input type="file" name="profile" id="file1">
+                <input type="hidden" name="email" value="<?php echo $emailv;?>">
+                <input type="submit" name="submit" value="Upload">
+            </form>
+        </div>
+
+        <!--<a href="#" style="color:white;text-decoration:none; font-size:20px;float: right;">Search &nbsp;&nbsp;&nbsp; </a>-->
+        <div class="container1" id="cont2">
+            <div class="box" id="box1">
+                <h2> Personal inofrmaions</h2>
+                <div id="askInfo">
+                    <p class="p1">Full name </p>
+                    <p class="p1">job</p>
+                    <p class="p1">email:</p>
+                    <p class="p1">Phone number</p>
+                    <p class="p1"> Birth date</p>
+
+                    <p class="p1">sex </p>
+                </div>
+                <div id="giveInfo">
+                    <p class="p2">
+                        <?php echo $firstname.$lastname; ?> </p>
+                    <p class="p2">
+                        <?php echo $job;?>
+                    </p>
+                    <p class="p2">
+                        <?php echo $emailv ;?>
+                    </p>
+                    <p class="p2">
+                        <?php echo $phonenumber; ?>
+                    </p>
+                    <p class="p2">
+                        <?php echo $birthdate; ?>
+                    </p>
+                    <!-- <p class="p2"><?php ?></p> -->
+                    <p class="p2">
+                        <?php echo $gender ;?>
+                    </p>
+                </div>
+            </div>
+            <div class="box" id="box2">
+                <h2> Taken surveys</h2>
+                <dfn>
+             <dt >From AASTU university</dt>
+               <dd>
+                   <ol type="I ">
+                       <li>Student achievment in AASTU by staff councels</li>
+                       <li>Student engagement in extracalicura activity in AASTU</li>
+                   </ol>
+               </dd>
+
+               <dt> From saint George beer Factory</dt>
+                   <dd>
+                       <ol type="I ">
+                           <li>
+                               satisfaction level
+                           </li>
+                           <li>
+                               which beer is best for you
+                           </li>
+                       </ol>
+                   </dd>
+         </dfn>
+            </div>
+            <div class="box " id="box3">
+                <h2> your portfolio</h2>
+                <pre>       I am...
+        .
+        .
+        .
+        thank you
+    </pre>
+            </div>
+            <div class="box" id="box4">
+                <h2> Created surveys</h2>
+                <dfn>
+        <dt >From AASTU university</dt>
+          <dd>
+              <ol type="I">
+                  <li >Student achievment in AASTU by staff councels</li>
+                  <li >Student engagement in extracalicura activity in AASTU</li>
+              </ol>
+          </dd>
+          <dt > From saint George beer Factory
+              <dd>
+                  <ol type="I">
+                      <li >
+                          satisfaction level
+                      </li>
+                      <li >
+                          which beer is best for you
+                      </li>
+                  </ol>
+              </dd>
+          </dt>
+    </dfn></div>
+            <div class="box" id="box5">
+                <h2>Your level one</h2>
+                <figure>
+                    <image src="C:\Users\Mehari\Documents\compiler\html\New folder\Internet_programing_project\profile\images\bronze1.jpg" widht="70em" height="60em" idth="60em" height="40em" />
+                    <figcaption>bronze level</figcaption>
+
+                    <image src="../images/silver1.jpg" widht="200em" height="100em" />
+
+                    <figcaption>Silver level</figcaption>
+                    <image src="../images/gold1.jpg" widht="200em" height="100em" />
+                    <figcaption>Gold level</figcaption>
+                </figure>
+
+            </div>
+            <div class="box" id="box6">
+                <table border=1 width=100% height=200px>
+                    <tr width=100% height=25%>
+                        <td align=center width=50% height=25%>Net balance</td>
+                        <td align=center width=50% height=25%>Total earned balance</td>
+                    </tr>
+                    <tr width=100% height=30%>
+                        <td align=center width=50% height=25%>
+                            500$
+                        </td>
+                        <td align=center width=50% height=25%>
+                            1000$
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <?php
+include "../includes/footer.php";
+?>
+
+    </body>
+
+    </html>
