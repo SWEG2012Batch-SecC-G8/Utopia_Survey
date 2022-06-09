@@ -23,12 +23,12 @@ include '../includes/header.php';
 
 </p>
 
- <div class="surveybuttons" >
+ <div class="surveybuttons"   >
 
    <div class="btnsWithDescription">
         <a href="../php/take_survey1.php"> <p align=center> <button class="btn TakesurveyButtonX" type="button" name="Take survey">
           <b>Take survey</b></button></p></a>
-        <p class="AftreButtonText" align=center >
+        <p class="AftreButtonText" align=center font-color="yellow">
          If you want to Take survey and make money this is the right place. We will regularly email you survey invites. The
          surveys are quick and easy to answer.</p>
    </div>

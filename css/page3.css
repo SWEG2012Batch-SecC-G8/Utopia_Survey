@@ -1,39 +1,37 @@
-.introtText{
-
-background-image:url("../images/bookglass.jpg");
-
-font-size:7vw;
-color:white ;
-text-align:center;
-}
-.introtText .pia{
-color:black;
-
-
-}
-.AftreButtonText{
-font-size:2vw
-
-}
-.p3container{
-display: grid;
-grid-template-columns: 1fr 1fr;
-
-}
-.btnsWithDescription{
-border-radius: 40px;
-padding:3vw;
-margin:2vw;
-transition: transform .4s ease;
-}
-.btnsWithDescription:hover{
-background-color: rgb(230, 232, 231);
-transform: scale(1.1);
-
+.introtText {
+    background-image: url("../images/bookglass.jpg");
+    font-size: 7vw;
+    color: white;
+    text-align: center;
 }
 
-.ToTop{
-justify-content: center;
-text-align: center;
-font-size:24px;
+.introtText .pia {
+    color: rgb(188, 147, 147) !important;
+}
+
+.AftreButtonText {
+    font-size: 2vw !important;
+}
+
+.p3container {
+    display: grid;
+    grid-template-columns: 1fr 1fr !important;
+}
+
+.btnsWithDescription {
+    border-radius: 40px !important;
+    padding: 3vw;
+    margin: 2vw;
+    transition: transform .4s ease;
+}
+
+.btnsWithDescription:hover {
+    background-color: rgb(230, 232, 231);
+    transform: scale(1.1) !important;
+}
+
+.ToTop {
+    justify-content: center !important;
+    text-align: center;
+    font-size: 24px;
 }

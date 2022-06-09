@@ -16,7 +16,7 @@ error_reporting(0);
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head t>
-<body bgcolor="#4dffff" topmargin=0px leftmargin=0px rightmargin=0px bottommargin=0px>
+<body bgcolor="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'4dffff" topmargin=0px leftmargin=0px rightmargin=0px bottommargin=0px>
      <div class="mySurvey">
         <div class="head">
             <p>Your Previously created surveys</p>
@@ -48,6 +48,9 @@ error_reporting(0);
             <input type="submit" name="submit" value="search" style="color:black;text-decoration:none;font-size:25px;">
             </form>
         </div>
+        <div class="card" style="width: 18rem;">
+ 
+   
     </div>
     <br>';
         <div class="Boxcontainer">
@@ -60,18 +63,9 @@ error_reporting(0);
    
 
 
-
-
-
-
-
-
-
-
-
-
     $creater=$_SESSION['email'];
-   
+    
+  
         
     if (isset($_GET["search_title"])|| isset($_GET["Untaken Surveys"])||isset($_GET["Recently Created Surveys"]))
 {
@@ -83,108 +77,30 @@ error_reporting(0);
         if ($row["survey_title"]==$_GET["search_title"])
         {
    echo '
-            <div id="boxlarge">
-                <div id="top">
 
-                    <p id="surveyName">';echo $row["survey_title"];echo'</a>
-                    </p>
-                    <p id="Catagory">';echo $row["category"];echo'</p>
-                </div>
-                <div id="Desc">
-                    <input type="checkbox" class="read-more-state" id="post-1" />
-                    <h3>Description</h3>
-                    <p class="read-more-wrap">';echo $row["description"];echo'</span></p>
-
-                    <label for="post-1" class="read-more-trigger"></label>
-                </div>
-
-                <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="background-color: #7f5a83;
-                padding: 10px;
-                border-radius: 10px;
-                font-size: 30px;
-                width: 250px;
-                color: white;
-                border: 0;
-                margin-bottom: 20px;"href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'";>
-                        
-                Review as Taker
-   
-            </a></p>
-                <div id="btns">
-                    <div class="box-1">;
-                         <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'";>
-                            <div class="btn btn-one">
-                                <span>Open </span>
-                            </div>
-                        </a>
-                    </div>
- 
-                    <div class="box-2">
-                   
-                    <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'";>
-                        <div class="btn btn-two">
-                            <span>Removes</span>
-                        </div>
-                         <input name="generate" value="generate" type="submit" id="generate">
-                        </a>
-                    </div>
-                </div>
-
-            </div>';
+   <div class="card" style="width: 18rem;">
+   <div class="card-body ">
+     <h5 class="card-title ">';echo $row["survey_title"];echo'</h5>
+     <h6 class="card-subtitle mb-2 text-muted">';echo $row["category"];echo'</h6>
+     <p class="card-text">';echo $row["description"];echo'</p>
+     <a href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'" class="card-link btn-lg btn-primary ">Card link</a>
+     <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link">Another link</a>
+     <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link">Another link</a>
+   </div>
+ </div>';
      }else if ($row["category"]==$_GET["search_title"])
      {
 echo '
-         <div id="boxlarge">
-             <div id="top">
-
-                 <p id="surveyName">';echo $row["survey_title"];echo'</a>
-                 </p>
-                 <p id="Catagory">';echo $row["category"];echo'</p>
-             </div>
-             <div id="Desc">
-                 <input type="checkbox" class="read-more-state" id="post-1" />
-                 <h3>Description</h3>
-                 <p class="read-more-wrap">';echo $row["description"];echo'</span></p>
-
-                 <label for="post-1" class="read-more-trigger"></label>
-             </div>
-
-             <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="background-color: #7f5a83;
-                    padding: 10px;
-                    border-radius: 10px;
-                    font-size: 30px;
-                    width: 250px;
-                    color: white;
-                    border: 0;
-                    margin-bottom: 20px;"href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'";>
-                            
-                    Review as Taker
-       
-                </a></p>
-
-             <div id="btns">
-                 <div class="box-1">;
-                      <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'";>
-                         <div class="btn btn-one">
-                             <span>Open </span>
-                         </div>
-                     </a>
-                 </div>
-
-                 <div class="box-2">
-                
-                 <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'";>
-                     <div class="btn btn-two">
-                         <span>Removes</span>
-                     </div>
-                     </a>
-
-                     
-                 </div>
-                
-             </div>
-             
-         </div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+  <h5 class="card-title">';echo $row["survey_title"];echo'</h5>
+  <h6 class="card-subtitle mb-2 text-muted">';echo $row["category"];echo'</h6>
+  <p class="card-text">';echo $row["description"];echo'</p>
+  <a href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'" class="card-link btn-lg btn-primary ">Card link</a>
+  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link">Another link</a>
+  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link">Another link</a>
+</div>
+</div>
         ';
  }
    }
@@ -194,53 +110,16 @@ echo '
     while ($row = mysqli_fetch_assoc($result))
     {
         echo '
-                 <div id="boxlarge">
-                     <div id="top">
-     
-                         <p id="surveyName">';echo $row["survey_title"];echo'</a>
-                         </p>
-                         <p id="Catagory">';echo $row["category"];echo'</p>
-                     </div>
-                     <div id="Desc">
-                         <input type="checkbox" class="read-more-state" id="post-1" />
-                         <h3>Description</h3>
-                         <p class="read-more-wrap">';echo $row["description"];echo'</span></p>
-     
-                         <label for="post-1" class="read-more-trigger"></label>
-                     </div>
-                     <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="background-color: #7f5a83;
-                     padding: 10px;
-                     border-radius: 10px;
-                     font-size: 30px;
-                     width: 250px;
-                     color: white;
-                     border: 0;
-                     margin-bottom: 20px;"href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'";>
-                             
-                     Review as Taker
-        
-                 </a></p> <p id="nq" style="color: rgb(136, 131, 124);">48 Questions</p>
-     
-                     <div id="btns">
-                         <div class="box-1">;
-                              <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'";>
-                                 <div class="btn btn-one">
-                                     <span>Open </span>
-                                 </div>
-                             </a>
-                         </div>
-      
-                         <div class="box-2">
-                        
-                         <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'";>
-                             <div class="btn btn-two">
-                                 <span>Removes</span>
-                             </div>
-                             </a>
-                         </div>
-                     </div>
-     
-                 </div>';
+        <div class="card ms-5" style="width: 30rem;">
+        <div class="card-body">
+          <h5 class="card-title">';echo $row["survey_title"];echo'</h5>
+          <h6 class="card-subtitle mb-2 text-muted">';echo $row["category"];echo'</h6>
+          <a href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'" class="card-link btn-lg btn-primary ">Card link</a>
+          <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link btn-lg btn-primary ">Card link</a>
+          <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link btn-lg btn-primary">Another link</a>
+          <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link btn-lg btn-primary">Another link</a>
+        </div>
+      </div>';
          }
         }else if ($_GET["Recently Created Surveys"]=="Recently Created Surveys")
              {
@@ -253,54 +132,16 @@ echo '
                 while ($row = mysqli_fetch_assoc($result))
                     {
                 echo '
-                <div id="boxlarge">
-                    <div id="top">
-    
-                        <p id="surveyName">';echo $row["survey_title"];echo'</a>
-                        </p>
-                        <p id="Catagory">';echo $row["category"];echo'</p>
-                    </div>
-                    <div id="Desc">
-                        <input type="checkbox" class="read-more-state" id="post-1" />
-                        <h3>Description</h3>
-                        <p class="read-more-wrap">';echo $row["description"];echo'</span></p>
-    
-                        <label for="post-1" class="read-more-trigger"></label>
-                    </div>
-    
-                    <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="background-color: #7f5a83;
-                    padding: 10px;
-                    border-radius: 10px;
-                    font-size: 30px;
-                    width: 250px;
-                    color: white;
-                    border: 0;
-                    margin-bottom: 20px;"href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'";>
-                            
-                    Review as Taker
-       
-                </a></p>
-    
-                    <div id="btns">
-                        <div class="box-1">;
-                             <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'";>
-                                <div class="btn btn-one">
-                                    <span>Open </span>
-                                </div>
-                            </a>
-                        </div>
-     
-                        <div class="box-2">
-                       
-                        <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'";>
-                            <div class="btn btn-two">
-                                <span>Removes</span>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-    
-                </div>';
+                <div class="card ms-5" style="width: 30rem;">
+                <div class="card-body">
+                  <h5 class="card-title">';echo $row["survey_title"];echo'</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">';echo $row["category"];echo'</h6>
+                  <p class="card-text">';echo $row["description"];echo'</p>
+                  <a href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'" class="card-link btn-lg btn-primary ">Review</a>
+                  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link btn-lg btn-primary">Analyis</a>
+                  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'" class="card-link btn-lg btn-danger">Delete</a>
+                </div>
+              </div>';
              }
             }
         }
@@ -309,57 +150,16 @@ echo '
                 $result = mysqli_query($conn,$sql);
             while ($row = mysqli_fetch_assoc($result)){
                 echo '
-                <div id="boxlarge">
-                    <div id="top">
-    
-                        <p id="surveyName">';echo $row["survey_title"];echo'</a>
-                        </p>
-                        <p id="Catagory">';echo $row["category"];echo'</p>
-                    </div>
-                    <div id="Desc">
-                        <input type="checkbox" class="read-more-state" id="post-1" />
-                        <h3>Description</h3>
-                        <p class="read-more-wrap">';echo $row["description"];echo'</span></p>
-    
-                        <label for="post-1" class="read-more-trigger"></label>
-                    </div>
-    
-                    <p >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <a style="background-color: #7f5a83;
-                    padding: 10px;
-                    border-radius: 10px;
-                    font-size: 30px;
-                    width: 250px;
-                    color: white;
-                    border: 0;
-                    margin-bottom: 20px;"href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'";>
-                            
-                    Review as Taker
-       
-                </a></p>
-                    <div id="btns">
-
-
-
-                        <div class="box-1">;
-                             <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'";>
-                                <div class="btn btn-one">
-                                    <span color="green">Analayze Survey</span>
-                                </div>
-                            </a>
-                        </div>
-                            <br>
-                            <br>
-                        <div class="box-2">
-                       
-                        <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'";>
-                            <div class="btn btn-two">
-                                <span>Removes</span>
-                            </div>
-                            </a>
-                        </div>
-                    </div>
-                   
+                <div class="card ms-5" style="width: 30rem;">
+                <div class="card-body">
+                  <h5 class="card-title ">';echo $row["survey_title"];echo'</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">';echo $row["category"];echo'</h6>
+                  <p class="card-text">';echo $row["description"];echo'</p>
+                  <a href="';echo "created_survey/pages/".$row["survey_title"].".html";echo'" class="card-link btn-lg btn-primary ">Review</a>
+                  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"];echo'" class="card-link btn-lg btn-primary">Analyis</a>
+                  <a href="';echo "../php/survey_analysis.php?survey_title=".$row["survey_title"]."&delete=delete";echo'" class="card-link btn-lg btn-danger">Delete</a>
                 </div>
+              </div>
             
                ';
              }
